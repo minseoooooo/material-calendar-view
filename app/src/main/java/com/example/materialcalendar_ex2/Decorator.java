@@ -19,7 +19,13 @@ public class Decorator implements DayViewDecorator {
     private TextView textView;
 
     public Decorator(Collection<CalendarDay> dates, Activity context) {
-        drawable = context.getDrawable(R.drawable.calendar_background);
+        drawable = context.getDrawable(R.drawable.calendar_background_notempty);
+
+        this.dates = new HashSet<>(dates);
+    }
+
+    public TodayDecorator(Collection<CalendarDay> dates, Activity context) {
+        drawable = context.getDrawable(R.drawable.calendar_background_today);
 
         this.dates = new HashSet<>(dates);
     }

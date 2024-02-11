@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private MaterialCalendarView calendar;
     public Context context;
     private ArrayList<CalendarDay> calendarDayList = new ArrayList<>();
+    private ArrayList<CalendarDay> calendarDayList_today = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,15 +30,22 @@ public class MainActivity extends AppCompatActivity {
         MainActivity activity = this;
         View view = binding.getRoot();
 
+        // 오늘날짜 선택
+        calendar.setSelectedDate(CalendarDay.today());
+
         //색칠할 날짜를 calendarDayList에 추가
         calendarDayList.add(CalendarDay.from(2024, 1, 25));
         calendarDayList.add(CalendarDay.from(2024, 05, 24));
         calendarDayList.add(CalendarDay.from(2022, 05, 23));
 
-        // 오늘날짜 선택
-        calendar.setSelectedDate(CalendarDay.today());
         // 데코레이터
         Decorator decorator = new Decorator(calendarDayList, activity);
         binding.calendarView.addDecorator(decorator);
+
+
+        calendarDayList_today.add(CalendarDay.today());
+
+        Decorator today_decorator = new Decorator(calendarDayList_today, activity);
+        binding.calendarView.addDecorator(today_decorator);
     }
 }
