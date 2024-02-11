@@ -13,7 +13,7 @@ import java.util.HashSet;
 
 public class Decorator implements DayViewDecorator {
 
-    private final Drawable drawable;
+    private Drawable drawable;
     private int color;
     private HashSet<CalendarDay> dates;
     private TextView textView;
@@ -24,7 +24,7 @@ public class Decorator implements DayViewDecorator {
         this.dates = new HashSet<>(dates);
     }
 
-    public TodayDecorator(Collection<CalendarDay> dates, Activity context) {
+    public void TodayDecorator(Collection<CalendarDay> dates, Activity context) {
         drawable = context.getDrawable(R.drawable.calendar_background_today);
 
         this.dates = new HashSet<>(dates);

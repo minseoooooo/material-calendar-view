@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         // 오늘날짜 선택
         calendar.setSelectedDate(CalendarDay.today());
-
+////////
         //색칠할 날짜를 calendarDayList에 추가
         calendarDayList.add(CalendarDay.from(2024, 1, 25));
         calendarDayList.add(CalendarDay.from(2024, 05, 24));
@@ -41,11 +41,11 @@ public class MainActivity extends AppCompatActivity {
         // 데코레이터
         Decorator decorator = new Decorator(calendarDayList, activity);
         binding.calendarView.addDecorator(decorator);
-
+////////
 
         calendarDayList_today.add(CalendarDay.today());
 
-        Decorator today_decorator = new Decorator(calendarDayList_today, activity);
+        TodayDecorator today_decorator = new TodayDecorator(calendarDayList_today, activity);
         binding.calendarView.addDecorator(today_decorator);
     }
 }

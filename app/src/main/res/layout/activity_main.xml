@@ -16,7 +16,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:mcv_selectionColor="#1976D2"
+            app:mcv_selectionColor="@color/main"
             app:mcv_showOtherDates="all"
             app:mcv_tileSize="53dp" />
 
